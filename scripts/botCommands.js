@@ -54,7 +54,7 @@ module.exports = function(robot) {
 
   // What are the most powerfull trees?
 
-var magictrees = ["Hazel", "Cedar", "Willow"];
+var magictrees = ["Hazel", "Cedar", "Willow", "Redwood"];
  // question asked to the witch @steve = What is your question?
  // @ steve responds = Which of these 3 trees is the most powerfull one? The Hazel, the Cedar or the Willow?
  // if answer is = Hazel
