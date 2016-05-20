@@ -47,7 +47,23 @@ module.exports = function(robot) {
   robot.respond(/practice/i, function(res){
     var spells = ["*felo'mena'SHA!*", "*felo'mena'SHAW!*", "_felo... mena... SHA!_", "*malore!*", "_felomenashaaa!_"];
     return res.send(res.random(spells));
+<<<<<<< Updated upstream
   });
+=======
+  })
+
+  // What are the most powerfull trees?
+
+var magictrees = ["Hazel", "Cedar", "Willow"];
+ // question asked to the witch @steve = What is your question?
+ // @ steve responds = Which of these 3 trees is the most powerfull one? The Hazel, the Cedar or the Willow?
+ // if answer is = Hazel
+ // return = Hazel is not the most powerfull tree, but it is powerful as it used to used to gain knowledge, wisdom and poetic inspiration. 
+ // A circle drawed around you with a Hazel branch will protect you from ennemies.
+ 
+
+
+>>>>>>> Stashed changes
 }
 
 
