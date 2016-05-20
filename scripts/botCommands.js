@@ -30,13 +30,13 @@ module.exports = function(robot) {
     var selectedSpell = mMissles[Math.floor(Math.random()*mMissles.length)];
 
     if (selectedSpell === mMissles[0]) {
-      return message.send(robot.name + " winds up a " + selectedSpell.toUpperCase() + " and hurls it at " + name + "!");
+      return message.reply(robot.name + " winds up a " + selectedSpell.toUpperCase() + " and hurls it at " + name + "!");
     } else if (selectedSpell === mMissles[1]) {
-      return message.send(robot.name + " spams " + selectedSpell.toUpperCase() + " at " + name + "!");
+      return message.reply(robot.name + " spams " + selectedSpell.toUpperCase() + " at " + name + "!");
     } else if (selectedSpell === mMissles[2]) {
-      return message.send(robot.name + " emits a " + selectedSpell.toUpperCase() + " and " + name + " was standing right in the middle of it!")
+      return message.reply(robot.name + " emits a " + selectedSpell.toUpperCase() + " and " + name + " was standing right in the middle of it!")
     } else {
-      return message.send(robot.name + " plants his feet in the ground and casts " + selectedSpell.toUpperCase() + " right at " + name + " and guess what it's already off cooldown...")
+      return message.reply(robot.name + " plants his feet in the ground and casts " + selectedSpell.toUpperCase() + " right at " + name + " and guess what it's already off cooldown...")
     }
 
   });
@@ -52,6 +52,20 @@ module.exports = function(robot) {
     return res.send(res.random(spells));
 
   });
+
+  robot.respond(/what can you tell us about magic and trees?/i, function(res){
+    var magictrees = ["Hazel", "Cedar", "Willow", "Redwood"];
+    var htmlstring = "I know about ";
+      for (var i = 0; i<magictrees.length; i++) {
+        htmlstring += magictrees[i] + "trees, ";
+
+        if (magictrees[i] === 3) {
+          htmlstring += " and " + magictrees[3] + "trees."
+        }
+
+      }
+    console.log(htmlstring);
+  })
 
 }
 
