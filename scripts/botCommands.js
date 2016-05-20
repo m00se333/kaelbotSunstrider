@@ -11,7 +11,8 @@
       return message.reply("Nice to meet you, " + name + "!");
     }
   });
-
+  
+  // the (/whatever/) usage of "/       /" is checking for a regular expression
   robot.hear(/Who is your pet?/, function(res){
     return res.send("A'lar")
   });
@@ -47,10 +48,9 @@ module.exports = function(robot) {
   robot.respond(/practice/i, function(res){
     var spells = ["*felo'mena'SHA!*", "*felo'mena'SHAW!*", "_felo... mena... SHA!_", "*malore!*", "_felomenashaaa!_"];
     return res.send(res.random(spells));
-<<<<<<< Updated upstream
+
   });
-=======
-  })
+
 
   // What are the most powerfull trees?
 
@@ -61,10 +61,6 @@ var magictrees = ["Hazel", "Cedar", "Willow"];
  // return = Hazel is not the most powerfull tree, but it is powerful as it used to used to gain knowledge, wisdom and poetic inspiration. 
  // A circle drawed around you with a Hazel branch will protect you from ennemies.
  
-
-
->>>>>>> Stashed changes
-}
 
 
 
