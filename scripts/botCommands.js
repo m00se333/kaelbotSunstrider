@@ -1,21 +1,19 @@
 module.exports = function(robot) {
   
   // Magic Missle 
-  robot.respond(/target (.*)/i, function(message){
+  robot.respond(/target (.*)/i, function(res){
     var mMissles = ["pyroblast", "ice lance", "poison nova", "disenegrate"];
-    var name = message.match[1];
+    var name = res.match[1];
     var selectedSpell = mMissles[Math.floor(Math.random()*mMissles.length)];
 
-    message.reply("hello" + name);
-
      if (selectedSpell === mMissles[0]) {
-       return message.reply(robot.name + " winds up a " + selectedSpell.toUpperCase() + " and hurls it at " + name + "!");
+       return res.reply(robot.name + " winds up a " + selectedSpell.toUpperCase() + " and hurls it at " + name + "!");
      } else if (selectedSpell === mMissles[1]) {
-       return message.reply(robot.name + " spams " + selectedSpell.toUpperCase() + " at " + name + "!");
+       return res.reply(robot.name + " spams " + selectedSpell.toUpperCase() + " at " + name + "!");
      } else if (selectedSpell === mMissles[2]) {
-       return message.reply(robot.name + " emits a " + selectedSpell.toUpperCase() + " and " + name + " was standing right in the middle of it!")
+       return res.reply(robot.name + " emits a " + selectedSpell.toUpperCase() + " and " + name + " was standing right in the middle of it!")
      } else {
-       return message.reply(robot.name + " plants his feet in the ground and casts " + selectedSpell.toUpperCase() + " right at " + name + " and guess what it's already off cooldown...")
+       return res.reply(robot.name + " plants his feet in the ground and casts " + selectedSpell.toUpperCase() + " right at " + name + " and guess what it's already off cooldown...")
      }
 
   });
@@ -25,9 +23,8 @@ module.exports = function(robot) {
      return res.send("I am of course.")
    });
 
-   random 
    robot.respond(/practice/i, function(res){
-     var spells = ["*felo'mena'SHA!*", "*felo'mena'SHAW!*", "_felo... mena... SHA!_", "*malore!*", "_felomenashaaa!_"];
+     var spells = ["*felo'mena'SHA!*", "*felo'mena'SHAW!*", "_felo... mena... SHA!_", "*malore!*", "_felomenashaaa!_", "*felo'melorn!*", "_felo'melorn!_" ];
      return res.send(res.random(spells));
 
    });
@@ -36,7 +33,7 @@ module.exports = function(robot) {
      var magictrees = ["Hazel", "Cedar", "Willow", "Redwood"];
      var htmlstring = "I know about ";
        for (var i = 0; i<magictrees.length; i++) {
-         htmlstring += magictrees[i] + "trees, ";
+         htmlstring += magictrees[i] + " trees, ";
 
          if (magictrees[i] === 3) {
            htmlstring += " and " + magictrees[3] + "trees."
@@ -44,18 +41,36 @@ module.exports = function(robot) {
 
        }
      res.send(htmlstring);
+   });
+
+   robot.hear(/I need some motivation/i, function(res){
+    var posters = ["http://imgur.com/1xC2BYX", "http://imgur.com/gallery/aLbmSbx", "http://imgur.com/gallery/aghTMdh"]
+    res.reply("I got you.")
+    res.send(res.random(posters));
    })
 
 }
 
-   What are the most powerfull trees?
+/* --- add code for tree if statements --- 
 
-var magictrees = ["Hazel", "Cedar", "Willow", "Redwood"];
-  //question asked to the witch @steve = What is your question?
- // @ steve responds = Which of these 3 trees is the most powerfull one? The Hazel, the Cedar or the Willow?
- // if answer is = Hazel
- // return = Hazel is not the most powerfull tree, but it is powerful as it used to used to gain knowledge, wisdom and poetic inspiration. 
- // A circle drawed around you with a Hazel branch will protect you from ennemies.
+Here is some pseudocode to think about.
+
+I think we're going to make a robot.respond call that takes in the splat (.*) argument.
+From there we can use if and if else statements to respond with the correct information
+
+if the robot hears (.*) function(message)
+
+variable treeListener =  message.match[1]
+
+    - if hazel
+      <code>
+    - if cedar
+      <code>
+    - if willow
+      <code>
+    - I took off redwood because it wasn't part of the original.
+
+--- */
  
 
 
