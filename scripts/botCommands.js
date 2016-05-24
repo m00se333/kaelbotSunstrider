@@ -30,8 +30,8 @@ module.exports = function(robot) {
    });
 
    robot.respond(/what can you tell us about magic and trees?/i, function(res){
-     var magictrees = ["Hazel", "Cedar", "Willow", "Redwood"];
-     var htmlstring = "I know about ";
+     var magictrees = ["Hazel", "Cedar", "Willow"];
+     var htmlstring = "Trees detain a mystical form of magic, which of these three do you think is the most powerful? The Hazel, the Cedar, or the Willow? ";
        for (var i = 0; i<magictrees.length; i++) {
          htmlstring += magictrees[i] + " trees, ";
 
@@ -48,6 +48,19 @@ module.exports = function(robot) {
     res.reply("I got you.")
     res.send(res.random(posters));
    });
+
+      if (robot.respond(/The Hazel?/i, function(msg){
+        msg.reply('The Hazel has a hidden form of magic, but it is not the most powerfull one. If you are attacked by a wizard, simply draw a circle around yourself with a Hazel branch, you will be protected.');
+    });
+
+      else if (robot.respond(/The Cedar?/i, function(msg){
+        msg.reply('It is not the right answer. However, the Cedar is the tree of life, it will help you regain energy and ground yourself whenever you place the palms of your hands against the ends of the leaves.');
+    });
+      else if (robot.respond(/I know, it must be the Oak tree?/i, function(msg){
+        msg.reply('Good answer, the Willow is the most sacred tree. The true Tree of Enchantment, its power is so grand that priests, priestesses, druids, and even kings sit among those trees to gain eloquence, be whispered prophecies.');
+    });
+
+)
 
 }
 
@@ -71,8 +84,7 @@ variable treeListener =  message.match[1]
     - I took off redwood because it wasn't part of the original.
 
 --- */
- 
-
+---/* Magic Trees
 
 
 
