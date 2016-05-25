@@ -7,20 +7,20 @@ module.exports = function(robot) {
     var selectedSpell = mMissles[Math.floor(Math.random()*mMissles.length)];
 
      if (selectedSpell === mMissles[0]) {
-       return res.reply(robot.name + " winds up a " + selectedSpell.toUpperCase() + " and hurls it at " + name + "!");
+       return res.send(robot.name + " winds up a " + selectedSpell.toUpperCase() + " and hurls it at " + name + "!");
      } else if (selectedSpell === mMissles[1]) {
-       return res.reply(robot.name + " spams " + selectedSpell.toUpperCase() + " at " + name + "!");
+       return res.send(robot.name + " spams " + selectedSpell.toUpperCase() + " at " + name + "!");
      } else if (selectedSpell === mMissles[2]) {
-       return res.reply(robot.name + " emits a " + selectedSpell.toUpperCase() + " and " + name + " was standing right in the middle of it!")
+       return res.send(robot.name + " emits a " + selectedSpell.toUpperCase() + " and " + name + " was standing right in the middle of it!")
      } else {
-       return res.reply(robot.name + " plants his feet in the ground and casts " + selectedSpell.toUpperCase() + " right at " + name + " and guess what it's already off cooldown...")
+       return res.send(robot.name + " plants his feet in the ground and casts " + selectedSpell.toUpperCase() + " right at " + name + " and guess what it's already off cooldown...")
      }
 
   });
 
    //General "hear" code
    robot.hear(/who is the most powerful user of magic/i, function(res){
-     return res.send("I am of course.")
+     return res.send("I am of course.");
    });
 
    robot.respond(/practice/i, function(res){
@@ -47,7 +47,7 @@ module.exports = function(robot) {
     var posters = ["http://imgur.com/1xC2BYX", "http://imgur.com/gallery/aLbmSbx", "http://imgur.com/gallery/aghTMdh"]
     res.reply("I got you.")
     res.send(res.random(posters));
-   })
+   });
 
 }
 
